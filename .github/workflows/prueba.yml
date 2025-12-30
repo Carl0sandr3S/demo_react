@@ -14,4 +14,9 @@ jobs:
         run: npm ci
       - name: run tests
         run: npm test
-              
+  deploy-job:
+    needs: build-jobs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy step
+        run: echo "Desplegando la aplicación..."      
